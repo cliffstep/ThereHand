@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="UfUBJk" name="ThereHand" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="com.yourcompany.ThereHand" includeBinaryInAppConfig="1"
+              jucerVersion="4.3.1">
+  <MAINGROUP id="cpb3Vc" name="ThereHand">
+    <GROUP id="{B919969B-6E44-BBF2-C2E3-0D93B9E32C7E}" name="Source">
+      <FILE id="e32NNS" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="WcXUWd" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2015 targetFolder="Builds/VisualStudio2015">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="ThereHand"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="ThereHand"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_events" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_graphics" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_data_structures" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_cryptography" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_video" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_opengl" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_audio_utils" path="..\..\..\Programs\juce\modules"/>
+      </MODULEPATHS>
+    </VS2015>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>

@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2015
+Project("{4CCEB013-76FD-BDDC-AF85-15E8C0462B0B}") = "ThereHand", "ThereHand.vcxproj", "{4578DD75-7F5D-CD3E-1BD7-16D6E21BB86E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4578DD75-7F5D-CD3E-1BD7-16D6E21BB86E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4578DD75-7F5D-CD3E-1BD7-16D6E21BB86E}.Debug|Win32.Build.0 = Debug|Win32
+		{4578DD75-7F5D-CD3E-1BD7-16D6E21BB86E}.Release|Win32.ActiveCfg = Release|Win32
+		{4578DD75-7F5D-CD3E-1BD7-16D6E21BB86E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
