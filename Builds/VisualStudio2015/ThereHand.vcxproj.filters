@@ -367,6 +367,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Source\Oscillator.cpp">
+      <Filter>ThereHand\Source</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\MainComponent.cpp">
       <Filter>ThereHand\Source</Filter>
     </ClCompile>
@@ -2106,6 +2109,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Source\Oscillator.h">
+      <Filter>ThereHand\Source</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\..\..\..\Programs\juce\modules\juce_audio_basics\buffers\juce_AudioChannelSet.h">
       <Filter>Juce Modules\juce_audio_basics\buffers</Filter>
     </ClInclude>

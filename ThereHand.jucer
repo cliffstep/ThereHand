@@ -5,6 +5,8 @@
               jucerVersion="4.3.1">
   <MAINGROUP id="cpb3Vc" name="ThereHand">
     <GROUP id="{B919969B-6E44-BBF2-C2E3-0D93B9E32C7E}" name="Source">
+      <FILE id="SLwQMU" name="Oscillator.cpp" compile="1" resource="0" file="Source/Oscillator.cpp"/>
+      <FILE id="F0aKtd" name="Oscillator.h" compile="0" resource="0" file="Source/Oscillator.h"/>
       <FILE id="e32NNS" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
       <FILE id="WcXUWd" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
@@ -13,9 +15,9 @@
   <EXPORTFORMATS>
     <VS2015 targetFolder="Builds/VisualStudio2015">
       <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
                        isDebug="1" optimisation="1" targetName="ThereHand"/>
-        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
                        isDebug="0" optimisation="3" targetName="ThereHand"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
