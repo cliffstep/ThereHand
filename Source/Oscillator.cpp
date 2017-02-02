@@ -11,6 +11,12 @@
 #include "Oscillator.h"
 
 
+Oscillator::Oscillator()
+	: amplitude(1.0f), sineWaveValue(1.0, 0.0), sampleRate(44100.0), glideTimeInSeconds(0.05), waveShape(WaveShape::Sine)
+{
+	this->frequency.reset(this->sampleRate, this->glideTimeInSeconds);
+}
+
 Oscillator::Oscillator(double sampleRate, WaveShape waveShape, double glideTimeInSeconds)
 	: amplitude(1.0f), sineWaveValue(1.0, 0.0)
 {
@@ -28,16 +34,23 @@ void Oscillator::setSampleRate(double sampleRate)
 {
 	this->sampleRate = sampleRate;
 	this->frequency.reset(sampleRate, glideTimeInSeconds);
+	this->amplitude.reset(sampleRate, glideTimeInSeconds);
 }
 
 void Oscillator::setGlideTime(double glideTimeInSeconds)
 {
 	this->frequency.reset(sampleRate, glideTimeInSeconds);
+	this->amplitude.reset(sampleRate, glideTimeInSeconds);
 }
 
 void Oscillator::setFrequency(double freq)
 {
 	Oscillator::frequency.setValue(2.0 * MathConstants::pi * freq / sampleRate);
+}
+
+void Oscillator::setAmplitude(float amplitude)
+{
+	Oscillator::amplitude.setValue(amplitude);
 }
 
 void Oscillator::setWaveShape(WaveShape waveShape)

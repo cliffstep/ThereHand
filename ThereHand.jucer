@@ -21,20 +21,20 @@
                        isDebug="0" optimisation="3" targetName="ThereHand"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_core" path="..\..\..\Programs\juce\modules"/>
-        <MODULEPATH id="juce_events" path="..\..\..\Programs\juce\modules"/>
-        <MODULEPATH id="juce_graphics" path="..\..\..\Programs\juce\modules"/>
-        <MODULEPATH id="juce_data_structures" path="..\..\..\Programs\juce\modules"/>
-        <MODULEPATH id="juce_gui_basics" path="..\..\..\Programs\juce\modules"/>
-        <MODULEPATH id="juce_gui_extra" path="..\..\..\Programs\juce\modules"/>
-        <MODULEPATH id="juce_cryptography" path="..\..\..\Programs\juce\modules"/>
         <MODULEPATH id="juce_video" path="..\..\..\Programs\juce\modules"/>
         <MODULEPATH id="juce_opengl" path="..\..\..\Programs\juce\modules"/>
-        <MODULEPATH id="juce_audio_basics" path="..\..\..\Programs\juce\modules"/>
-        <MODULEPATH id="juce_audio_devices" path="..\..\..\Programs\juce\modules"/>
-        <MODULEPATH id="juce_audio_formats" path="..\..\..\Programs\juce\modules"/>
-        <MODULEPATH id="juce_audio_processors" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_graphics" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_events" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_data_structures" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_cryptography" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_core" path="..\..\..\Programs\juce\modules"/>
         <MODULEPATH id="juce_audio_utils" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="..\..\..\Programs\juce\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="..\..\..\Programs\juce\modules"/>
       </MODULEPATHS>
     </VS2015>
   </EXPORTFORMATS>

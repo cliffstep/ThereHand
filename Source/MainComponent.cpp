@@ -10,6 +10,7 @@
 #define MAINCOMPONENT_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "Oscillator.h"
 
 //==============================================================================
 /*
@@ -43,18 +44,34 @@ public:
         // but be careful - it will be called on the audio thread, not the GUI thread.
 
         // For more details, see the help for AudioProcessor::prepareToPlay()
+
+
+		OSC.resize(5);
+
+		for (size_t i = 0; i < OSC.size(); i++)
+		{
+			OSC[i].setSampleRate(sampleRate);
+			OSC[i].setWaveShape(Oscillator::WaveShape::Sine);
+			OSC[i].setGlideTime(0.05);
+			OSC[i].setFrequency((i+1)*220.0);
+		}
+
     }
 
     void getNextAudioBlock (const AudioSourceChannelInfo& bufferToFill) override
     {
-        // Your audio-processing code goes here!
 
-        // For more details, see the help for AudioProcessor::getNextAudioBlock()
+		bufferToFill.clearActiveBufferRegion();
 
+		for (size_t i = 0; i < OSC.size(); i++)
+		{
+			OSC[i].setFrequency((0.1 + i) * freq);
+			OSC[i].setAmplitude(amp);
+			OSC[i].incrementBuffer(*bufferToFill.buffer);
+		}
 
-        // Right now we are not producing any data, in which case we need to clear the buffer
-        // (to prevent the output of random noise)
-        bufferToFill.clearActiveBufferRegion();
+		
+
     }
 
     void releaseResources() override
@@ -75,6 +92,24 @@ public:
         // You can add your drawing code here!
     }
 
+
+	// Mouse handling..
+	void mouseDown(const MouseEvent& e) override
+	{
+		mouseDrag(e);
+	}
+
+	void mouseDrag(const MouseEvent& e) override
+	{
+		freq = pow(10.0, log10(1.2e3) * ((getHeight() - e.y) / static_cast<double> (getHeight())));
+		amp = jmin(0.9f, 0.2f * e.position.x / getWidth());
+	}
+
+	void mouseUp(const MouseEvent&) override
+	{
+		amp = 0.0f;
+	}
+
     void resized() override
     {
         // This is called when the MainContentComponent is resized.
@@ -88,6 +123,10 @@ private:
 
     // Your private member variables go here...
 
+	float amp;
+	double freq;
+
+	std::vector<Oscillator> OSC;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)
 };

@@ -26,6 +26,7 @@ public:
 
 	enum WaveShape { Sine, Square, Triangle, Sawtooth };
 
+	Oscillator();
 	Oscillator(double sampleRate, WaveShape waveShape = WaveShape::Sine, double glideTimeInSeconds = 0.05);
 	~Oscillator();
 
@@ -33,6 +34,7 @@ public:
 	void setSampleRate(double sampleRate);
 	void setGlideTime(double glideTimeInSeconds);
 	void setFrequency(double freq);
+	void setAmplitude(float amplitude);
 	void setWaveShape(WaveShape waveShape);
 
 	enum ChannelMode { Mono, Left, Right };
