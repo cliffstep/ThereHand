@@ -15,12 +15,10 @@
 using namespace std;
 
 
-char input[80];
-string  permanentBuffer;
-DCB dcBus;
-HANDLE hSerial;
-DWORD  bytesRead, eventMask;
-COMMTIMEOUTS timeouts;
+
+
+
+
 
 template<typename Out>
 void split(const std::string &s, char delim, Out result) {
@@ -139,16 +137,16 @@ int CliffSerial::readSerial() {
 				size_t foundout = permanentBuffer.find("@");						// Search for end of package
 
 				if (foundout != std::string::npos) {											// Found?
-					cout << "Cortado inicio ruim: " << permanentBuffer << "\n";		// Print corrected buffer
+					//cout << "Cortado inicio ruim: " << permanentBuffer << "\n";		// Print corrected buffer
 
 																					//cout << "Final em: " << foundout << '\n';									// Print end point of string
 					string dataBufferString = permanentBuffer.substr(1, foundout);	// Take the package data
 					int sizebuf = dataBufferString.length();									// Calculate the size of the package
 					dataBufferString.erase(remove(dataBufferString.begin(), dataBufferString.end(), '\x1c'), dataBufferString.end());
-					cout << "Tamanho do buffer " << sizebuf << '\n';							// ... and print it
+					//cout << "Tamanho do buffer " << sizebuf << '\n';							// ... and print it
 														// If the size is the correct one
 						vector<string> strdados = split(dataBufferString, ',');
-						cout << "\nTESTE    " << strdados[0] << " TESTE " << strdados.size() <<"\n";
+						//cout << "\nTESTE    " << strdados[0] << " TESTE " << strdados.size() <<"\n";
 						if (strdados.size() == 10) {
 
 							dt.f = stof(strdados[0]);
@@ -165,7 +163,17 @@ int CliffSerial::readSerial() {
 							roll.f = stof(strdados[8]);
 							yaw.f = stof(strdados[9]);
 
-							cout << "Delta t " << dt.f << '\n';
+							dados.dt = dt.f;
+							dados.accx = accx.f;
+							dados.accy = accy.f;
+							dados.accz = accz.f;
+							dados.gyx = gyx.f;
+							dados.gyy = gyy.f;
+							dados.gyz = gyz.f;
+							dados.pitch = pitch.f;
+							dados.roll = roll.f;
+
+				/*			cout << "Delta t " << dt.f << '\n';
 							cout << "AccX " << accx.f << '\n';
 							cout << "AccY " << accy.f << '\n';
 							cout << "AccZ " << accz.f << '\n';
@@ -174,7 +182,7 @@ int CliffSerial::readSerial() {
 							cout << "GyZ " << gyz.f << '\n';
 							cout << "Pitch " << pitch.f << '\n';
 							cout << "Roll " << roll.f << '\n';
-							cout << "Yaw " << yaw.f << '\n';
+							cout << "Yaw " << yaw.f << '\n';*/
 
 						}
 						else {
@@ -210,6 +218,11 @@ int CliffSerial::readSerial() {
 int CliffSerial::stopSerial() {
 	CloseHandle(hSerial);
 	return 1;
+}
+
+dataBiffer CliffSerial::getData() {
+	return dados;
+
 }
 
 
