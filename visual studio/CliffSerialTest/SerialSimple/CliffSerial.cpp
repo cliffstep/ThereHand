@@ -15,7 +15,13 @@
 using namespace std;
 
 
-
+	char input[80];
+	string  permanentBuffer;
+	DCB dcBus;
+	HANDLE hSerial;
+	DWORD  bytesRead, eventMask;
+	COMMTIMEOUTS timeouts;
+	dataBiffer dadosBiffer;
 
 
 
@@ -163,17 +169,17 @@ int CliffSerial::readSerial() {
 							roll.f = stof(strdados[8]);
 							yaw.f = stof(strdados[9]);
 
-							dados.dt = dt.f;
-							dados.accx = accx.f;
-							dados.accy = accy.f;
-							dados.accz = accz.f;
-							dados.gyx = gyx.f;
-							dados.gyy = gyy.f;
-							dados.gyz = gyz.f;
-							dados.pitch = pitch.f;
-							dados.roll = roll.f;
+							dadosBiffer.dt = dt.f;
+							dadosBiffer.accx = accx.f;
+							dadosBiffer.accy = accy.f;
+							dadosBiffer.accz = accz.f;
+							dadosBiffer.gyx = gyx.f;
+							dadosBiffer.gyy = gyy.f;
+							dadosBiffer.gyz = gyz.f;
+							dadosBiffer.pitch = pitch.f;
+							dadosBiffer.roll = roll.f;
 
-				/*			cout << "Delta t " << dt.f << '\n';
+							/*cout << "Delta t " << dt.f << '\n';
 							cout << "AccX " << accx.f << '\n';
 							cout << "AccY " << accy.f << '\n';
 							cout << "AccZ " << accz.f << '\n';
@@ -221,7 +227,7 @@ int CliffSerial::stopSerial() {
 }
 
 dataBiffer CliffSerial::getData() {
-	return dados;
+	return dadosBiffer;
 
 }
 

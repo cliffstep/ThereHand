@@ -7,18 +7,7 @@
 
 #include "CliffSerial.h"
 using namespace std;
-struct dataBiffer {
-	float dt;
-	float accx;
-	float accy;
-	float accz;
-	float gyx;
-	float gyy;
-	float gyz;
-	float yaw;
-	float pitch;
-	float roll;
-};
+
 
 dataBiffer dados;
 
@@ -29,7 +18,7 @@ int main(int argc, char **argv) {
 		serialHdl.readSerial();
 		dados = serialHdl.getData();
 		Sleep(1);
-		cout << dados.pitch;
+		cout << dados.pitch << '\n';
 	}
 }
 

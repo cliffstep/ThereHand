@@ -19,14 +19,6 @@ struct dataBiffer {
 class CliffSerial
 {
 
-private:
-	char input[80];
-	string  permanentBuffer;
-	DCB dcBus;
-	HANDLE hSerial;
-	DWORD  bytesRead, eventMask;
-	COMMTIMEOUTS timeouts;
-	dataBiffer dados;
 
 
 public:
