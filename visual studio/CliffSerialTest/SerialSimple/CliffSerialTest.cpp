@@ -13,7 +13,7 @@ dataBiffer dados;
 
 int main(int argc, char **argv) {
 	CliffSerial serialHdl;
-	serialHdl.startSerial();
+	serialHdl.startSerial("\\\\.\\COM3");
 	while (true) {
 		serialHdl.readSerial();
 		dados = serialHdl.getData();

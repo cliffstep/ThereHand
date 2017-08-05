@@ -45,7 +45,7 @@ void Oscillator::setGlideTime(double glideTimeInSeconds)
 
 void Oscillator::setFrequency(double freq)
 {
-	Oscillator::frequency.setValue(2.0 * MathConstants::pi * freq / sampleRate);
+	Oscillator::frequency.setValue(2.0 * mathConstants::pi * freq / sampleRate);
 }
 
 void Oscillator::setAmplitude(float amplitude)
@@ -71,7 +71,7 @@ void Oscillator::fillBuffer(AudioSampleBuffer & buffer, ChannelMode audioMode)
 		float newAmplitude = Oscillator::amplitude.getNextValue();
 		float outputWave;
 
-		sineWaveValue *= std::exp(MathConstants::i * 2.0 * MathConstants::pi * newFreq);
+		sineWaveValue *= std::exp(mathConstants::i * 2.0 * mathConstants::pi * newFreq);
 		
 		outputWave = static_cast<float>(sineWaveValue.real());
 
@@ -109,7 +109,7 @@ void Oscillator::incrementBuffer(AudioSampleBuffer & buffer, ChannelMode audioMo
 		float newAmplitude = Oscillator::amplitude.getNextValue();
 		float outputWave;
 
-		sineWaveValue *= std::exp(MathConstants::i * 2.0 * MathConstants::pi * newFreq);
+		sineWaveValue *= std::exp(mathConstants::i * 2.0 * mathConstants::pi * newFreq);
 
 		outputWave = static_cast<float>(sineWaveValue.real());
 

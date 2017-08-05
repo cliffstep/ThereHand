@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2015
+# Visual Studio 2017
 
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ThereHand - App", "ThereHand_App.vcxproj", "{CCE9A25F-E9DC-6473-F0E3-7BAEBDB83375}"
 EndProject

@@ -1,6 +1,36 @@
 #include "CliffSerial.h"
 
 
+template<typename Out>
+void split(const std::string &s, char delim, Out result) {
+	std::stringstream ss;
+	ss.str(s);
+	std::string item;
+	while (std::getline(ss, item, delim)) {
+		*(result++) = item;
+	}
+}
+
+std::vector<std::string> split(const std::string &s, char delim) {
+	std::vector<std::string> elems;
+	split(s, delim, std::back_inserter(elems));
+	return elems;
+}
+
+bool isFloat(string myString) {
+	std::istringstream iss(myString);
+	float f;
+	iss >> noskipws >> f; // noskipws considers leading whitespace invalid
+						  // Check the entire string was consumed and if either failbit or badbit is set
+	return iss.eof() && !iss.fail();
+}
+
+union {
+	float f;
+	unsigned char bytes[4];
+} dt, accx, accy, accz, gyx, gyy, gyz, yaw, pitch, roll;
+
+
 CliffSerial::CliffSerial(){
 }
 
@@ -96,47 +126,29 @@ int CliffSerial::readSerial() {
 						//cout << "\nTESTE    " << strdados[0] << " TESTE " << strdados.size() <<"\n";
 						if (strdados.size() == 10) {
 
-							try {
-								dt.f = stof(strdados[0]);
+							dt.f = stof(strdados[0]);
 
-								accx.f = stof(strdados[1]);
-								accy.f = stof(strdados[2]);
-								accz.f = stof(strdados[3]);
+							accx.f = stof(strdados[1]);
+							accy.f = stof(strdados[2]);
+							accz.f = stof(strdados[3]);
 
-								gyx.f = stof(strdados[4]);
-								gyy.f = stof(strdados[5]);
-								gyz.f = stof(strdados[6]);
+							gyx.f = stof(strdados[4]);
+							gyy.f = stof(strdados[5]);
+							gyz.f = stof(strdados[6]);
 
-								pitch.f = stof(strdados[7]);
-								roll.f = stof(strdados[8]);
-								yaw.f = stof(strdados[9]);
+							pitch.f = stof(strdados[7]);
+							roll.f = stof(strdados[8]);
+							yaw.f = stof(strdados[9]);
 
-								dt.f = dt.f != dt.f ? 0 : dt.f;
-								dt.f = dt.f != dt.f ? 0 : dt.f;
-								accx.f = accx.f != accx.f ? 0 : accx.f;
-								accy.f = accy.f != accy.f ? 0 : accy.f;
-								accz.f = accz.f != accz.f ? 0 : accz.f;
-								gyx.f = gyx.f != gyx.f ? 0 : gyx.f;
-								gyy.f = gyy.f != gyy.f ? 0 : gyy.f;
-								gyz.f = gyz.f != gyz.f ? 0 : gyz.f;
-								pitch.f = pitch.f != pitch.f ? 0 : pitch.f;
-								roll.f = roll.f != roll.f ? 0 : roll.f;
-
-								dadosBiffer.dt = dt.f;
-								dadosBiffer.accx = accx.f;
-								dadosBiffer.accy = accy.f;
-								dadosBiffer.accz = accz.f;
-								dadosBiffer.gyx = gyx.f;
-								dadosBiffer.gyy = gyy.f;
-								dadosBiffer.gyz = gyz.f;
-								dadosBiffer.pitch = pitch.f;
-								dadosBiffer.roll = roll.f;
-							}
-							catch (...){
-								
-							}
-
-							
+							dadosBiffer.dt = dt.f;
+							dadosBiffer.accx = accx.f;
+							dadosBiffer.accy = accy.f;
+							dadosBiffer.accz = accz.f;
+							dadosBiffer.gyx = gyx.f;
+							dadosBiffer.gyy = gyy.f;
+							dadosBiffer.gyz = gyz.f;
+							dadosBiffer.pitch = pitch.f;
+							dadosBiffer.roll = roll.f;
 
 							/*cout << "Delta t " << dt.f << '\n';
 							cout << "AccX " << accx.f << '\n';

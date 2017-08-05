@@ -14,7 +14,7 @@
 #include <complex>
 #include "../JuceLibraryCode/JuceHeader.h"
 
-namespace MathConstants
+namespace mathConstants
 {
 	const double pi = 3.14159265358979323846;
 	const std::complex<double> i(0.0, 1.0);
